@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Button() {
+export default function Button({ children }: any) {
     return (
         <button type="button">
-            Click Me!
+            {children}
         </button>
     )
 }
