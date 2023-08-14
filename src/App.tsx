@@ -34,9 +34,12 @@ function App() {
 const styles: StyleSheet = {
   gridContainer: {
     display: "grid",
-    gridTemplateColumns: "auto auto auto auto",
+    gridTemplateColumns: "50px 50px 50px 50px",
+    gridTemplateRows: "50px 50px 50px 50px 50px",
     backgroundColor: "#2196F3",
     padding: "10px",
+    gap: "10px",
+    width: "max-content",
   },
 }
 
