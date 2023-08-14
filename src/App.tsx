@@ -1,28 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Button from './component/Button';
+import StyleSheet from './type/StyleSheet';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Button>thangok</Button>
+      <div style={styles.gridContainer}>
+        <Button>2</Button>
+        <Button>3</Button>
+        <Button>4</Button>
+        <Button>5</Button>
+        <Button>1</Button>
+        <Button>6</Button>
+        <Button>7</Button>
+        <Button>8</Button>
+        <Button>9</Button>
+      </div>
     </div>
   );
+}
+
+const styles: StyleSheet = {
+  gridContainer: {
+    display: "grid",
+    gridTemplateColumns: "auto auto auto",
+    backgroundColor: "#2196F3",
+    padding: "10px",
+  },
 }
 
 export default App;
