@@ -17,7 +17,7 @@ export default function Button({ children, background }: any) {
 
 const styles: StyleSheet = {
   gridItem: {
-    backgroundColor: "gray",
+    backgroundColor: "#525f7d",
     border: "0px solid rgba(0, 0, 0, 0.8)",
     borderRadius: "50%",
     padding: "0px",
