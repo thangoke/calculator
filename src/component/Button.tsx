@@ -1,21 +1,28 @@
 import React from "react";
 import StyleSheet from '../type/StyleSheet';
 
-export default function Button({ children }: any) {
-    return (
-        <button type="button" style={styles.gridItem}>
-            {children}
-        </button>
-    )
+export default function Button({ children, background }: any) {
+  const customizer: React.CSSProperties = {}
+
+  if (background) {
+    customizer.background = background;
+  }
+
+  return (
+    <button type="button" style={{ ...styles.gridItem, ...customizer }}>
+      {children}
+    </button >
+  )
 }
 
 const styles: StyleSheet = {
   gridItem: {
-    backgroundColor: "rgba(255, 255, 255, 0.8)",
-    border: "1px solid rgba(0, 0, 0, 0.8)",
+    backgroundColor: "gray",
+    border: "0px solid rgba(0, 0, 0, 0.8)",
     borderRadius: "50%",
     padding: "0px",
     fontSize: "30px",
     textAlign: "center",
+    color: "white"
   }
 }
