@@ -6,15 +6,28 @@ import StyleSheet from './type/StyleSheet';
 function App() {
 
   let [operand, setOperand] = useState("");
+  let [result, setResult] = useState("");
 
   const handleButtonPress = (command: string) => {
     if (command == null) return;
+    switch (command) {
+      case "=": {
+        let res = "";
+        try {
+          res = eval(operand);
+        } catch (err) {
+          res = "Invalid operand, cannot calculate";
+        }
+        setResult(res);
+        return;
+      }
+    }
     setOperand(operand + command);
   };
 
   return (
     <div style={styles.calculatorContainer}>
-      <div style={styles.resultBox}>Result Box</div>
+      <div style={styles.resultBox}>{result}</div>
       <div style={styles.operandBox}>{operand}</div>
       <div style={styles.gridContainer}>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">C</Button>
