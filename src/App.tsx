@@ -9,28 +9,33 @@ function App() {
       <div style={styles.resultBox}>Result Box</div>
       <div style={styles.operandBox}>Operand Box</div>
       <div style={styles.gridContainer}>
-        <Button background="#d57c52">C</Button>
-        <Button background="#d57c52">+/-</Button>
-        <Button background="#d57c52">%</Button>
-        <Button background="#b05fff">/</Button>
-        <Button background="#525f7d">1</Button>
-        <Button background="#525f7d">2</Button>
-        <Button background="#525f7d">3</Button>
-        <Button background="#b05fff">X</Button>
-        <Button background="#525f7d">4</Button>
-        <Button background="#525f7d">5</Button>
-        <Button background="#525f7d">6</Button>
-        <Button background="#b05fff">+</Button>
-        <Button background="#525f7d">7</Button>
-        <Button background="#525f7d">8</Button>
-        <Button background="#525f7d">9</Button>
-        <Button background="#b05fff">-</Button>
-        <Button background="#525f7d">.</Button>
-        <Button background="#525f7d">0</Button>
-        <Button background="#525f7d">=</Button>
+        <Button handleButtonPress={handleButtonPress} background="#d57c52">C</Button>
+        <Button handleButtonPress={handleButtonPress} background="#d57c52">+/-</Button>
+        <Button handleButtonPress={handleButtonPress} background="#d57c52">%</Button>
+        <Button handleButtonPress={handleButtonPress} background="#b05fff">/</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">1</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">2</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">3</Button>
+        <Button handleButtonPress={handleButtonPress} background="#b05fff">X</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">4</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">5</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">6</Button>
+        <Button handleButtonPress={handleButtonPress} background="#b05fff">+</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">7</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">8</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">9</Button>
+        <Button handleButtonPress={handleButtonPress} background="#b05fff">-</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">.</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">0</Button>
+        <Button handleButtonPress={handleButtonPress} background="#525f7d">=</Button>
       </div>
     </div>
   );
+}
+
+function handleButtonPress(command: string) {
+  if (command == null) return;
+  alert(command);
 }
 
 const styles: StyleSheet = {

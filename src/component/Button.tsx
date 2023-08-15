@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import StyleSheet from '../type/StyleSheet';
 
-export default function Button({ children, background }: any) {
+export default function Button({ children, background, handleButtonPress }: any) {
 
   let [isHover, setIsHover] = useState(false);
+  let [operand, setOperand] = useState("");
 
   return (
     <button type="button"
       style={{ ...styles.gridItem, background: isHover ? "#1975c5" : background }}
       onMouseEnter={e => setIsHover(true)}
-      onMouseLeave={e => setIsHover(false)}>
+      onMouseLeave={e => setIsHover(false)}
+      onClick={e => handleButtonPress((e.target as any).innerText)}>
       {children}
     </button >
   )
