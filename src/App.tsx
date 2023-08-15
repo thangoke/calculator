@@ -5,7 +5,9 @@ import StyleSheet from './type/StyleSheet';
 
 function App() {
   return (
-    <div className="App">
+    <div style={styles.calculatorContainer}>
+      <div style={styles.resultBox}>Result Box</div>
+      <div style={styles.operandBox}>Operand Box</div>
       <div style={styles.gridContainer}>
         <Button background="#d57c52">C</Button>
         <Button background="#d57c52">+/-</Button>
@@ -32,14 +34,35 @@ function App() {
 }
 
 const styles: StyleSheet = {
+  calculatorContainer: {
+    display: "flex",
+    flexDirection: "column",
+    border: "5px solid #9e5ab4",
+    borderRadius: "20px",
+    backgroundColor: "white",
+    width: "250px",
+  },
+  resultBox: {
+    textAlign: "right",
+    fontSize: "15px",
+    padding: "10px",
+    paddingTop: "100px",
+    paddingBottom: "0px",
+    color: "#7f8b99",
+  },
+  operandBox: {
+    textAlign: "right",
+    fontSize: "30px",
+    fontWeight: "bold",
+    padding: "10px",
+    paddingTop: "0px",
+    color: "#31475e",
+  },
   gridContainer: {
     display: "grid",
     gridTemplateColumns: "50px 50px 50px 50px",
     gridTemplateRows: "50px 50px 50px 50px 50px",
-    border: "5px solid #9e5ab4",
-    borderRadius: "20px",
-    backgroundColor: "white",
-    paddingTop: "200px",
+    paddingTop: "10px",
     paddingBottom: "30px",
     paddingLeft: "10px",
     paddingRight: "10px",
