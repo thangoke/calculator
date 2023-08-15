@@ -4,7 +4,6 @@ import StyleSheet from '../type/StyleSheet';
 export default function Button({ children, background, handleButtonPress }: any) {
 
   let [isHover, setIsHover] = useState(false);
-  let [operand, setOperand] = useState("");
 
   return (
     <button type="button"

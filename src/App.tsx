@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Button from './component/Button';
 import StyleSheet from './type/StyleSheet';
 
 function App() {
+
+  let [operand, setOperand] = useState("");
+
+  const handleButtonPress = (command: string) => {
+    if (command == null) return;
+    setOperand(operand + command);
+  };
+
   return (
     <div style={styles.calculatorContainer}>
       <div style={styles.resultBox}>Result Box</div>
-      <div style={styles.operandBox}>Operand Box</div>
+      <div style={styles.operandBox}>{operand}</div>
       <div style={styles.gridContainer}>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">C</Button>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">+/-</Button>
@@ -31,11 +39,6 @@ function App() {
       </div>
     </div>
   );
-}
-
-function handleButtonPress(command: string) {
-  if (command == null) return;
-  alert(command);
 }
 
 const styles: StyleSheet = {
@@ -62,6 +65,7 @@ const styles: StyleSheet = {
     padding: "10px",
     paddingTop: "0px",
     color: "#31475e",
+    minHeight: "30px",
   },
   gridContainer: {
     display: "grid",
