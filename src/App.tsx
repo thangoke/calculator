@@ -147,7 +147,7 @@ const styles: StyleSheet = {
   gridContainer: {
     display: "grid",
     gridTemplateColumns: "50px 50px 50px 50px",
-    gridTemplateRows: "50px 50px 50px 50px 50px",
+    gridTemplateRows: "50px 50px 50px 50px 50px 50px",
     paddingTop: "10px",
     paddingBottom: "30px",
     paddingLeft: "10px",
