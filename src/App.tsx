@@ -8,18 +8,78 @@ function App() {
   let [operand, setOperand] = useState("");
   let [result, setResult] = useState("");
 
+  const mAdd = (num: number) => {
+    let currVal = localStorage.getItem("calculator.thangok/mem") || "0";
+    const newVal = Number(currVal) + num;
+    localStorage.setItem("calculator.thangok/mem", "" + newVal);
+  };
+
+  const mSub = (num: number) => {
+    let currVal = localStorage.getItem("calculator.thangok/mem") || "0";
+    const newVal = Number(currVal) - num;
+    localStorage.setItem("calculator.thangok/mem", "" + newVal);
+  };
+
+  const mClear = () => {
+    localStorage.setItem("calculator.thangok/mem", "0");
+  };
+
+  const mRecall = () => {
+    let currVal = localStorage.getItem("calculator.thangok/mem") || "0";
+    return currVal;
+  };
+
+  const doEval = (expression: string) => {
+    let res = "";
+    try {
+      res = eval(expression);
+    } catch (err) {
+      res = "Invalid expression, cannot calculate";
+    }
+    return res;
+  }
+
   const handleButtonPress = (command: string) => {
     if (command == null) return;
     switch (command) {
       case "=": {
-        let res = "";
-        try {
-          res = eval(operand);
-        } catch (err) {
-          res = "Invalid operand, cannot calculate";
-        }
+        const res = doEval(operand);
         setResult(res);
         return;
+      }
+      case "M+": {
+        const res = doEval(operand);
+        setResult(res);
+        if (typeof res === "number") {
+          mAdd(res);
+        }
+        return;
+      }
+      case "M-": {
+        const res = doEval(operand);
+        setResult(res);
+        if (typeof res === "number") {
+          mSub(res);
+        }
+        return;
+      }
+      case "MR": {
+        const res = mRecall();
+        setResult(res);
+        return;
+      }
+      case "MC": {
+        mClear();
+        return;
+      }
+      case "C": {
+        setOperand("");
+        setResult("");
+        return;
+      }
+      case "X": {
+        command = "*";
+        break;
       }
     }
     setOperand(operand + command);
@@ -30,6 +90,10 @@ function App() {
       <div style={styles.resultBox}>{result}</div>
       <div style={styles.operandBox}>{operand}</div>
       <div style={styles.gridContainer}>
+        <Button handleButtonPress={handleButtonPress} background="#d57c52">M+</Button>
+        <Button handleButtonPress={handleButtonPress} background="#d57c52">M-</Button>
+        <Button handleButtonPress={handleButtonPress} background="#d57c52">MR</Button>
+        <Button handleButtonPress={handleButtonPress} background="#b05fff">MC</Button>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">C</Button>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">+/-</Button>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">%</Button>
@@ -48,7 +112,7 @@ function App() {
         <Button handleButtonPress={handleButtonPress} background="#b05fff">-</Button>
         <Button handleButtonPress={handleButtonPress} background="#525f7d">.</Button>
         <Button handleButtonPress={handleButtonPress} background="#525f7d">0</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">=</Button>
+        <Button handleButtonPress={handleButtonPress} background="#d57c52">=</Button>
       </div>
     </div>
   );
