@@ -92,8 +92,8 @@ function App() {
       <div style={styles.gridContainer}>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">M+</Button>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">M-</Button>
-        <Button handleButtonPress={handleButtonPress} background="#d57c52">MR</Button>
-        <Button handleButtonPress={handleButtonPress} background="#b05fff">MC</Button>
+        <Button handleButtonPress={handleButtonPress} background="#d57c52">MC</Button>
+        <Button handleButtonPress={handleButtonPress} background="#b05fff">MR</Button>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">C</Button>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">+/-</Button>
         <Button handleButtonPress={handleButtonPress} background="#d57c52">%</Button>
