@@ -13,21 +13,21 @@ function App() {
         <Button background="#d57c52">+/-</Button>
         <Button background="#d57c52">%</Button>
         <Button background="#b05fff">/</Button>
-        <Button>1</Button>
-        <Button>2</Button>
-        <Button>3</Button>
+        <Button background="#525f7d">1</Button>
+        <Button background="#525f7d">2</Button>
+        <Button background="#525f7d">3</Button>
         <Button background="#b05fff">X</Button>
-        <Button>4</Button>
-        <Button>5</Button>
-        <Button>6</Button>
+        <Button background="#525f7d">4</Button>
+        <Button background="#525f7d">5</Button>
+        <Button background="#525f7d">6</Button>
         <Button background="#b05fff">+</Button>
-        <Button>7</Button>
-        <Button>8</Button>
-        <Button>9</Button>
+        <Button background="#525f7d">7</Button>
+        <Button background="#525f7d">8</Button>
+        <Button background="#525f7d">9</Button>
         <Button background="#b05fff">-</Button>
-        <Button>.</Button>
-        <Button>0</Button>
-        <Button>=</Button>
+        <Button background="#525f7d">.</Button>
+        <Button background="#525f7d">0</Button>
+        <Button background="#525f7d">=</Button>
       </div>
     </div>
   );
