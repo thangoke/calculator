@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Button from './component/Button';
 import StyleSheet from './type/StyleSheet';
+import { ThemeContext } from './context/ThemeContext';
 
 function App() {
 
@@ -86,35 +87,37 @@ function App() {
   };
 
   return (
-    <div style={styles.calculatorContainer}>
-      <div style={styles.resultBox}>{result}</div>
-      <div style={styles.operandBox}>{operand}</div>
-      <div style={styles.gridContainer}>
-        <Button handleButtonPress={handleButtonPress} background="#d57c52">M+</Button>
-        <Button handleButtonPress={handleButtonPress} background="#d57c52">M-</Button>
-        <Button handleButtonPress={handleButtonPress} background="#d57c52">MC</Button>
-        <Button handleButtonPress={handleButtonPress} background="#b05fff">MR</Button>
-        <Button handleButtonPress={handleButtonPress} background="#d57c52">C</Button>
-        <Button handleButtonPress={handleButtonPress} background="#d57c52">+/-</Button>
-        <Button handleButtonPress={handleButtonPress} background="#d57c52">%</Button>
-        <Button handleButtonPress={handleButtonPress} background="#b05fff">/</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">1</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">2</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">3</Button>
-        <Button handleButtonPress={handleButtonPress} background="#b05fff">X</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">4</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">5</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">6</Button>
-        <Button handleButtonPress={handleButtonPress} background="#b05fff">+</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">7</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">8</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">9</Button>
-        <Button handleButtonPress={handleButtonPress} background="#b05fff">-</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">.</Button>
-        <Button handleButtonPress={handleButtonPress} background="#525f7d">0</Button>
-        <Button handleButtonPress={handleButtonPress} background="#d57c52">=</Button>
+    <ThemeContext.Provider value='dark'>
+      <div style={styles.calculatorContainer}>
+        <div style={styles.resultBox}>{result}</div>
+        <div style={styles.operandBox}>{operand}</div>
+        <div style={styles.gridContainer}>
+          <Button handleButtonPress={handleButtonPress} background="#d57c52">M+</Button>
+          <Button handleButtonPress={handleButtonPress} background="#d57c52">M-</Button>
+          <Button handleButtonPress={handleButtonPress} background="#d57c52">MC</Button>
+          <Button handleButtonPress={handleButtonPress} background="#b05fff">MR</Button>
+          <Button handleButtonPress={handleButtonPress} background="#d57c52">C</Button>
+          <Button handleButtonPress={handleButtonPress} background="#d57c52">+/-</Button>
+          <Button handleButtonPress={handleButtonPress} background="#d57c52">%</Button>
+          <Button handleButtonPress={handleButtonPress} background="#b05fff">/</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">1</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">2</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">3</Button>
+          <Button handleButtonPress={handleButtonPress} background="#b05fff">X</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">4</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">5</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">6</Button>
+          <Button handleButtonPress={handleButtonPress} background="#b05fff">+</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">7</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">8</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">9</Button>
+          <Button handleButtonPress={handleButtonPress} background="#b05fff">-</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">.</Button>
+          <Button handleButtonPress={handleButtonPress} background="#525f7d">0</Button>
+          <Button handleButtonPress={handleButtonPress} background="#d57c52">=</Button>
+        </div>
       </div>
-    </div>
+    </ThemeContext.Provider>
   );
 }
 
