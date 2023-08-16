@@ -3,6 +3,7 @@ import './App.css';
 import Button from './component/Button';
 import StyleSheet from './type/StyleSheet';
 import { ThemeContext } from './context/ThemeContext';
+import ToggleSwitch from './component/toggle';
 
 function App() {
 
@@ -90,6 +91,7 @@ function App() {
   return (
     <ThemeContext.Provider value={theme}>
       <div style={theme === "light" ? styles.calculatorContainerLight : styles.calculatorContainerDark}>
+        <ToggleSwitch label="Dark" onValueChange={(value: boolean) => { value ? setTheme("dark") : setTheme("light") }} />
         <div style={styles.resultBox}>{result}</div>
         <div style={styles.operandBox}>{operand}</div>
         <div style={styles.gridContainer}>
