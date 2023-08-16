@@ -8,6 +8,7 @@ function App() {
 
   let [operand, setOperand] = useState("");
   let [result, setResult] = useState("");
+  let [theme, setTheme] = useState("light");
 
   const mAdd = (num: number) => {
     let currVal = localStorage.getItem("calculator.thangok/mem") || "0";
@@ -87,8 +88,8 @@ function App() {
   };
 
   return (
-    <ThemeContext.Provider value='dark'>
-      <div style={styles.calculatorContainer}>
+    <ThemeContext.Provider value={theme}>
+      <div style={theme === "light" ? styles.calculatorContainerLight : styles.calculatorContainerDark}>
         <div style={styles.resultBox}>{result}</div>
         <div style={styles.operandBox}>{operand}</div>
         <div style={styles.gridContainer}>
@@ -122,12 +123,20 @@ function App() {
 }
 
 const styles: StyleSheet = {
-  calculatorContainer: {
+  calculatorContainerLight: {
     display: "flex",
     flexDirection: "column",
     border: "5px solid #9e5ab4",
     borderRadius: "20px",
     backgroundColor: "white",
+    width: "250px",
+  },
+  calculatorContainerDark: {
+    display: "flex",
+    flexDirection: "column",
+    border: "5px solid #9e5ab4",
+    borderRadius: "20px",
+    backgroundColor: "#282c34",
     width: "250px",
   },
   resultBox: {
