@@ -12,7 +12,7 @@ const ToggleSwitch = ({ label, onValueChange }: any) => {
                     className="checkbox"
                     name={label}
                     id={label}
-                    onClick={e => { toggleValue = !toggleValue; onValueChange(toggleValue) }} />
+                    onChange={e => { toggleValue = e.target.checked; onValueChange(toggleValue) }} />
                 <label className="label" htmlFor={label} >
                     <span className="inner" />
                     <span className="switch" />
